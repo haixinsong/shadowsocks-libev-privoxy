@@ -1,0 +1,14 @@
+version: "3"
+services:
+  sslocal:
+    image: nediiii/shadowsocks-libev-privoxy
+    restart: always
+    environment:
+      SERVER_ADDR: 198.199.101.152
+      SERVER_PORT: 8838
+      PASSWORD: YOUR_PASSWORD
+      METHOD: aes-256-cfb
+    ports:
+      - 8118:8118
+      - 1080:1080
+    restart: always
