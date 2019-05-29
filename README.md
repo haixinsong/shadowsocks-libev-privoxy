@@ -1,8 +1,8 @@
-# shadowsocks-libev with provixy
+# shadowsocks-libev with privoxy
 
 ## What is it
 
-This is a docker image base on offical shadowsocks-libev and integrated with privoxy which use use gfwlist to determine whether proxy or not.
+This is a docker image base on shadowsocks-libev and integrated with privoxy which use gfwlist to determine whether proxy or not.
 It work well for me, and only recommend use in mainland china.
 
 ## How to use
@@ -10,6 +10,8 @@ It work well for me, and only recommend use in mainland china.
 1. docker run this images with correct map ports
 2. set up your system proxy settings
 3. enjoy it
+
+Maybe you want to add some `exception URL` to the action list for some special purpose, just visit [http://config.privoxy.org](http://config.privoxy.org) when the container is running. You can edit the config on web browser now.
 
 ### With a `docker-compose.yml`
 
@@ -54,7 +56,7 @@ nediiii/shadowsocks-libev-privoxy
 ### reference
 
 - [shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev)
-- [privoxu](https://www.privoxy.org)
+- [privoxy](https://www.privoxy.org)
 - [gfwlist](https://github.com/gfwlist/gfwlist)
 - [gfwlist2privoxy](https://github.com/snachx/gfwlist2privoxy)
 
@@ -66,10 +68,9 @@ ENV SERVER_PORT 8388
 ENV PASSWORD=
 ENV METHOD      aes-256-gcm
 ENV TIMEOUT     300
-ENV DNS_ADDRS    8.8.8.8,8.8.4.4
 ```
 
 ### ports
 
-- 8118 for privoxy
-- 1080 for ss-local
+- 8118 for privoxy  (http  proxy)
+- 1080 for ss-local (sock5 proxy)
