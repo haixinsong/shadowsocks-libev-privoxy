@@ -25,7 +25,7 @@ services:
       SERVER_ADDR: 198.199.101.152
       SERVER_PORT: 8838
       PASSWORD: YOUR_PASSWORD
-      METHOD: aes-256-cfb
+      METHOD: aes-256-gcm
     ports:
       - 8118:8118
       - 1080:1080
@@ -45,7 +45,7 @@ docker run -d \
 -e SERVER_ADDR=198.199.101.152 \
 -e SERVER_PORT=8838 \
 -e PASSWORD=YOUR_PASSWORD \
--e METHOD=aes-256-cfb \
+-e METHOD=aes-256-gcm \
 -p 8118:8118 \
 -p 1080:1080 \
 nediiii/shadowsocks-libev-privoxy
