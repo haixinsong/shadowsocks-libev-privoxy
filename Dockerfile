@@ -5,6 +5,8 @@ RUN apk add --no-cache py-pip && \
     gfwlist2privoxy -i https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt -t socks5 -p 127.0.0.1:1080 -f /root/gfwlist.action && \
     chmod 660 /root/gfwlist.action
 
+# ---------------------------------------------------------------------------------------------------------------------
+
 FROM nediiii/shadowsocks-libev
 
 LABEL maintainer="nediiii <varnediiii@gmail.com>"
